@@ -11,14 +11,17 @@ $title-height-landscape: 12rem;
 
 $bike-size: 6rem;
 
-//  TODO: more properties for these measurements - particularly the media queries - should be calculated if possible from single base set
+$left-stop: 3rem;
 
 body {
   font-family: 'Roboto Slab', serif;
+  background: #212121;
 }
 
 h4, h6 {
   margin: 0;
+  text-align: left;
+  padding-left: $left-stop;
 }
 
 h4 {
@@ -48,9 +51,9 @@ header {
     content: url('../img/location.svg');
     height: 4rem;
     width: 4rem;
-    float: left;
+    float: right;
     position: absolute;
-    left: 1rem;
+    right: 1rem;
     line-height: 8rem;
     margin: 1rem;
   }
@@ -71,6 +74,8 @@ header {
   line-height: 12rem;
   background: url("../img/docks-oil-1200.png") no-repeat center;
   background-size: cover;
+  opacity: 0;
+  animation: fade-in .3s ease-in forwards;
 
   & button {
     border-radius: 50%;
@@ -109,15 +114,6 @@ header {
   position: relative;
   background: rgba(0, 0, 0, .7);
   animation: fade-in .4s ease-in forwards;
-  &.plenty {
-    background: rgba($primary-darker, .5);
-  }
-  &.few {
-    background: rgba($warn-darker, .5);
-  }
-  &.none {
-    background: rgba($bad-darker, .5);
-  }
 }
 
 @mixin label-backgrounds {
@@ -125,7 +121,7 @@ header {
   color: white;
   position: absolute;
   left: 0;
-  padding-left: 3rem;
+  padding-left: $left-stop;
   padding-right: 5rem;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%);
 }

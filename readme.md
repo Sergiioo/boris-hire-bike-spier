@@ -1,13 +1,4 @@
-dockable
-========
+boris-hire-bike-spier
+=====================
 
-Nothing to do with docker!
-
-Boris bikes are great, accept for one problem. Parking.
-
-You get off the train.
-You hop on a Boris bike.
-You cycle to work.
-You may or may not be able to park near your office!
-
-This is 
+Uses the [TFL API](https://api.tfl.gov.uk/) to grab the latest status for a bike dock showing the number of spaces and bikes.

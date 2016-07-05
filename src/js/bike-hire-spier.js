@@ -1,6 +1,6 @@
-var dockable = function dockable() {
+var bikeHireSpier = function () {
 
-    function isDockable(bikePoint, appId, appKey) {
+    function bikeStatus(bikePoint, appId, appKey) {
 
         var request = new Request('https://api.tfl.gov.uk/BikePoint/' + bikePoint + '?app_id=' + appId + '&app_key=' + appKey);
         fetch(request).then(function (response) {
@@ -44,7 +44,7 @@ var dockable = function dockable() {
 
     function refresh() {
         reset();
-        isDockable("BikePoints_340", getAppId(), getAppKey());
+        bikeStatus("BikePoints_340", getAppId(), getAppKey());
     }
 
     function getAppId() {
@@ -56,7 +56,7 @@ var dockable = function dockable() {
     }
 
     return {
-        isDockable: isDockable,
+        bikeStatus: bikeStatus(),
         getAppId: getAppId,
         getAppKey: getAppKey,
         refresh: refresh,
@@ -65,5 +65,4 @@ var dockable = function dockable() {
 
 }();
 
-// document.body.requestFullscreen();
-dockable.refresh();
+bikeHireSpier.refresh();
