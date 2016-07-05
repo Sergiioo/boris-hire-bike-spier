@@ -1,0 +1,189 @@
+$primary-pale: #CFD8DC;
+$primary-text: #212121;
+$primary-initial: #607D8B;
+$initial-darker: #37474F;
+$initial-pale: #ECEFF1;
+$primary-warn: #FFC107;
+$warn-darker: #FF8F00;
+$primary-good: #4CAF50;
+$good-darker: #2E7D32;
+$primary-bad: #F44336;
+$bad-darker: #C62828;
+
+$title-height: 18rem;
+$title-height-landscape: 12rem;
+
+$footer-height: 3rem;
+
+$bike-size: 6rem;
+
+//  TODO: more properties for these measurements - particularly the media queries - should be calculated if possible from single base set
+
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+h4, h6 {
+  margin: 0;
+}
+
+h4 {
+  line-height: 10rem;
+}
+
+h6 {
+  background: $primary-pale;
+  color: $primary-text;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $title-height;
+  background: $initial-darker;
+  font-size: 4.5rem;
+  line-height: 8rem;
+  color: $initial-pale;
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $footer-height;
+  background: #212121;
+}
+
+.location {
+  &::before {
+    content: url('../img/location.svg');
+    height: 4rem;
+    width: 4rem;
+    float: left;
+    position: absolute;
+    left: 1rem;
+    line-height: 8rem;
+    margin: 1rem;
+  }
+}
+
+.results {
+  position: absolute;
+  top: $title-height;
+  bottom: $footer-height;
+  left: 0;
+  right: 0;
+  font-size: 9rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  line-height: 12rem;
+  background: url("../img/docks-oil-1200.png") no-repeat center;
+  background-size: cover;
+
+  & button {
+    border-radius: 50%;
+    background: $primary-good;
+    height: 14rem;
+    width: 14rem;
+    border: none;
+    outline: none;
+    line-height: 0;
+    box-shadow: .4rem .4rem 1rem 0 rgba(0, 0, 0, .4);
+    &:focus {
+      background: pink;
+    }
+  }
+}
+
+.bike {
+  width: $bike-size;
+  height: $bike-size;
+  fill: $initial-pale;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#spaces, #bikes {
+  opacity: 0;
+  color: white;
+  width: 100%;
+  position: relative;
+  background: rgba(0, 0, 0, .7);
+  animation: fade-in .4s ease-in forwards;
+  &.plenty {
+    background: rgba($good-darker, .5);
+  }
+  &.few {
+    background: rgba($warn-darker, .5);
+  }
+  &.none {
+    background: rgba($bad-darker, .5);
+  }
+}
+
+@mixin label-backgrounds {
+  font-size: 4rem;
+  color: white;
+  position: absolute;
+  left: 0;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+#spaces {
+  &::before {
+    content: 'Spaces';
+    @include label-backgrounds;
+  }
+}
+
+#bikes {
+  &::before {
+    content: 'Bikes';
+    @include label-backgrounds;
+  }
+}
+
+@media (orientation: landscape) {
+  header {
+    font-size: 4rem;
+    height: $title-height-landscape;
+    line-height: $title-height-landscape;
+  }
+  h4, h6 {
+    line-height: 6rem;
+  }
+  .results {
+    top: $title-height-landscape;
+    flex-direction: row;
+  }
+  #spaces, #bikes {
+    width: 16rem;
+    background: transparent;
+    &::before {
+      padding: 0;
+      background: transparent;
+      margin-top: 6rem;
+    }
+  }
+  .location {
+    &::before {
+      line-height: 6rem;
+    }
+  }
+}

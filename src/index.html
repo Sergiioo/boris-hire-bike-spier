@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dockable - can I dock?</title>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<header>
+  <h4>Boris Hire Bike Spier</h4>
+  <h6 class="location" id="station"></h6>
+</header>
+<section class="results">
+  <article id="bikes"></article>
+  <button type="button" onclick="dockable.refresh(); blur();">
+    <img src="img/bike.svg" class="bike"/>
+  </button>
+  <article id="spaces"></article>
+</section>
+<footer></footer>
+<script src="js/dockable.js" defer></script>
+</body>
+</html>
