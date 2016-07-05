@@ -3,17 +3,11 @@ $primary-text: #212121;
 $primary-initial: #607D8B;
 $initial-darker: #37474F;
 $initial-pale: #ECEFF1;
-$primary-warn: #FFC107;
-$warn-darker: #FF8F00;
-$primary-good: #4CAF50;
-$good-darker: #2E7D32;
-$primary-bad: #F44336;
-$bad-darker: #C62828;
+$primary: #4CAF50;
+$primary-darker: #2E7D32;
 
 $title-height: 18rem;
 $title-height-landscape: 12rem;
-
-$footer-height: 3rem;
 
 $bike-size: 6rem;
 
@@ -49,15 +43,6 @@ header {
   text-align: center;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: $footer-height;
-  background: #212121;
-}
-
 .location {
   &::before {
     content: url('../img/location.svg');
@@ -74,10 +59,10 @@ footer {
 .results {
   position: absolute;
   top: $title-height;
-  bottom: $footer-height;
+  bottom: 0;
   left: 0;
   right: 0;
-  font-size: 9rem;
+  font-size: 8rem;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -89,7 +74,7 @@ footer {
 
   & button {
     border-radius: 50%;
-    background: $primary-good;
+    background: $primary;
     height: 14rem;
     width: 14rem;
     border: none;
@@ -125,7 +110,7 @@ footer {
   background: rgba(0, 0, 0, .7);
   animation: fade-in .4s ease-in forwards;
   &.plenty {
-    background: rgba($good-darker, .5);
+    background: rgba($primary-darker, .5);
   }
   &.few {
     background: rgba($warn-darker, .5);
