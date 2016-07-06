@@ -1,0 +1,125 @@
+body {
+  font-family: 'Roboto Slab', serif;
+  background: #212121; }
+
+h4, h6 {
+  margin: 0;
+  text-align: left;
+  padding-left: 3rem; }
+
+h4 {
+  line-height: 10rem; }
+
+h6 {
+  background: #CFD8DC;
+  color: #212121; }
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 18rem;
+  background: #37474F;
+  font-size: 4.5rem;
+  line-height: 8rem;
+  color: #ECEFF1;
+  text-align: center; }
+
+.location::before {
+  content: url("../img/location.svg");
+  height: 4rem;
+  width: 4rem;
+  float: right;
+  position: absolute;
+  right: 1rem;
+  line-height: 8rem;
+  margin: 1rem; }
+
+.results {
+  position: absolute;
+  top: 18rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 8rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  line-height: 12rem;
+  background: url("../img/docks-oil-1200.png") no-repeat center;
+  background-size: cover;
+  opacity: 0;
+  animation: fade-in .3s ease-in forwards; }
+  .results button {
+    border-radius: 50%;
+    background: #4CAF50;
+    height: 14rem;
+    width: 14rem;
+    border: none;
+    outline: none;
+    line-height: 0;
+    box-shadow: 0.4rem 0.4rem 1rem 0 rgba(0, 0, 0, 0.4); }
+    .results button:focus {
+      background: pink; }
+
+.bike {
+  width: 6rem;
+  height: 6rem;
+  fill: #ECEFF1; }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+#spaces, #bikes {
+  opacity: 0;
+  color: white;
+  width: 100%;
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  animation: fade-in .4s ease-in forwards; }
+
+#spaces::before {
+  content: 'Spaces';
+  font-size: 4rem;
+  color: white;
+  position: absolute;
+  left: 0;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 60%, transparent 100%); }
+
+#bikes::before {
+  content: 'Bikes';
+  font-size: 4rem;
+  color: white;
+  position: absolute;
+  left: 0;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 60%, transparent 100%); }
+
+@media (orientation: landscape) {
+  header {
+    font-size: 4rem;
+    height: 12rem;
+    line-height: 12rem; }
+  h4, h6 {
+    line-height: 6rem; }
+  .results {
+    top: 12rem;
+    flex-direction: row; }
+  #spaces, #bikes {
+    width: 16rem;
+    background: transparent; }
+    #spaces::before, #bikes::before {
+      padding: 0;
+      background: transparent;
+      margin-top: 6rem; }
+  .location::before {
+    line-height: 6rem; } }
