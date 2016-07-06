@@ -20,10 +20,10 @@ header {
   left: 0;
   right: 0;
   height: 18rem;
-  background: #37474F;
+  background: #01579B;
   font-size: 4.5rem;
   line-height: 8rem;
-  color: #ECEFF1;
+  color: white;
   text-align: center; }
 
 .location::before {
@@ -62,13 +62,11 @@ header {
     outline: none;
     line-height: 0;
     box-shadow: 0.4rem 0.4rem 1rem 0 rgba(0, 0, 0, 0.4); }
-    .results button:focus {
-      background: pink; }
 
 .bike {
   width: 6rem;
   height: 6rem;
-  fill: #ECEFF1; }
+  fill: #E1F5FE; }
 
 @keyframes fade-in {
   0% {
